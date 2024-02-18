@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Market</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            overflow: hidden;
+            animation: changeBackground 10s infinite alternate;
+        }
+
+        @keyframes changeBackground {
+            0% {
+                background-color: #f8f9fa;
+            }
+            100% {
+                background-color: #f8f9fa; /* Change to the color of your choice */
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin: 0;
+            color: #007bff;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .discord-button {
+            margin-bottom: 30px;
+        }
+
+        .discord-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7289da;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .discord-button a:hover {
+            background-color: #677bc4;
+        }
+
+        .wallets {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .wallet {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px 0;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        .wallet:last-child {
+            margin-bottom: 0;
+        }
+
+        .wallet:hover {
+            color: #0056b3;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .loading {
+            animation: slideIn 2s ease forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .loading-complete {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Python Market</h1>
+            <p>Welcome to our store!</p>
+        </div>
+
+        <div class="discord-button">
+            <!-- Discord Join Button -->
+            <a href="https://discord.gg/R5nZJ7Y26C" target="_blank">Join Discord Server</a>
+        </div>
+
+        <div class="wallets">
+            <!-- Crypto Wallets -->
+            <h2>Crypto Wallets</h2>
+            <div class="wallet" onclick="copyToClipboard('bc1qntmfgnzaar9wd92y8649z9mguw50v3hgw7a7lp')">BTC: bc1qntmfgnzaar9wd92y8649z9mguw50v3hgw7a7lp</div>
+            <div class="wallet" onclick="copyToClipboard('0xc2E0f0C57F9F5AA3D4fd7D30e6DCee5b02806F56')">ETH: 0xc2E0f0C57F9F5AA3D4fd7D30e6DCee5b02806F56</div>
+            <div class="wallet" onclick="copyToClipboard('LMA6yYNvA3wGFkRVMNebu1MXgLLwtQ9FQp')">LTC: LMA6yYNvA3wGFkRVMNebu1MXgLLwtQ9FQp</div>
+        </div>
+    </div>
+
+    <!-- Script to copy wallet address to clipboard -->
+    <script>
+        function copyToClipboard(text) {
+            var tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Copied to clipboard: " + text);
+        }
+    </script>
+</body>
+</html>
